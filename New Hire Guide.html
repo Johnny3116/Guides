@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoloTech New Hire Guide</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #f39c12;
+            --dark-color: #34495e;
+            --light-color: #ecf0f1;
+            --danger-color: #e74c3c;
+            --text-color: #333;
+            --sidebar-width: 250px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--dark-color);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .logo-container {
+            padding: 0 20px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .nav-menu {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .nav-heading {
+            padding: 10px 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .nav-item {
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-item.active {
+            background-color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .nav-item i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 30px;
+        }
+        
+        .section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .welcome-banner {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .welcome-banner h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .welcome-banner p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .card h3 {
+            color: var(--dark-color);
+            margin: 20px 0 10px;
+        }
+        
+        .step {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid var(--secondary-color);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+        }
+        
+        .step-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .step-content {
+            margin-left: 40px;
+        }
+        
+        .screenshot {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .note {
+            background-color: rgba(243, 156, 18, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .tip {
+            background-color: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .warning {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--danger-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #27ae60;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e67e22;
+        }
+        
+        .search-box {
+            padding: 10px 20px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            background-color: transparent;
+            color: white;
+            outline: none;
+        }
+        
+        .search-box ::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .progress-container {
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--secondary-color);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .checklist {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .checklist li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checklist li::before {
+            content: "";
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+        }
+        
+        .checklist li.checked::before {
+            background-color: var(--primary-color);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+            background-size: 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 70px;
+                overflow: visible;
+            }
+            
+            .logo-container {
+                padding: 10px;
+            }
+            
+            .logo span {
+                display: none;
+            }
+            
+            .nav-item span {
+                display: none;
+            }
+            
+            .nav-item i {
+                margin-right: 0;
+                font-size: 22px;
+            }
+            
+            .main-content {
+                margin-left: 70px;
+            }
+            
+            .search-box {
+                display: none;
+            }
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        /* Accordion for FAQ */
+        .accordion {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .accordion-header {
+            padding: 15px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+        
+        .accordion-content {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion.active .accordion-content {
+            padding: 15px;
+            max-height: 500px;
+        }
+        
+        .accordion-toggle {
+            transition: transform 0.3s;
+        }
+        
+        .accordion.active .accordion-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Video container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin: 20px 0;
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+        
+        .video-play-button {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .video-play-button i {
+            font-size: 40px;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-rocket"></i></div>
+                <span>YoloTech</span>
+            </div>
+        </div>
+        
+        <div class="search-box">
+            <input type="text" placeholder="Search..." id="guideSearch">
+        </div>
+        
+        <div class="nav-menu">
+            <div class="nav-heading">Get Started</div>
+            <div class="nav-item active" data-section="welcome">
+                <i class="fas fa-home"></i>
+                <span>Welcome</span>
+            </div>
+            <div class="nav-item" data-section="getting-started">
+                <i class="fas fa-play-circle"></i>
+                <span>Getting Started</span>
+            </div>
+            
+            <div class="nav-heading">Essential Systems</div>
+            <div class="nav-item" data-section="inside-yolo">
+                <i class="fas fa-building"></i>
+                <span>Inside Yolo</span>
+            </div>
+            <div class="nav-item" data-section="team-dynamics">
+                <i class="fas fa-ticket-alt"></i>
+                <span>Team Dynamics</span>
+            </div>
+            <div class="nav-item" data-section="onedrive">
+                <i class="fas fa-cloud"></i>
+                <span>OneDrive</span>
+            </div>
+            <div class="nav-item" data-section="outlook">
+                <i class="fas fa-envelope"></i>
+                <span>Outlook</span>
+            </div>
+            
+            <div class="nav-heading">Resources</div>
+            <div class="nav-item" data-section="faq">
+                <i class="fas fa-question-circle"></i>
+                <span>FAQ</span>
+            </div>
+            <div class="nav-item" data-section="contacts">
+                <i class="fas fa-address-book"></i>
+                <span>Key Contacts</span>
+            </div>
+            <div class="nav-item" data-section="checklist">
+                <i class="fas fa-tasks"></i>
+                <span>Onboarding Checklist</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <!-- Welcome Section -->
+        <div class="section active" id="welcome">
+            <div class="welcome-banner">
+                <h1>Welcome to YoloTech!</h1>
+                <p>We're excited to have you join our team. This guide will help you get started with all the essential systems you'll need in your new role.</p>
+            </div>
+            
+            <div class="card">
+                <h2>About This Guide</h2>
+                <p>This interactive guide is designed to help you navigate the essential systems and tools you'll use as part of your job at YoloTech. Here's what you'll find:</p>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">1</span> Essential Systems</div>
+                    <div class="step-content">Learn how to access and use Inside Yolo, Team Dynamics ticket system, OneDrive, and Outlook.</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">2</span> Step-by-Step Instructions</div>
+                    <div class="step-content">Detailed instructions with screenshots to help you navigate each system.</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">3</span> Helpful Resources</div>
+                    <div class="step-content">Quick access to FAQs, key contacts, and your onboarding checklist.</div>
+                </div>
+                
+                <div class="note">
+                    <strong>Note:</strong> If you encounter any issues or have questions that aren't covered in this guide, please contact your manager or the IT Help Desk at <strong>helpdesk@yolotech.com</strong>.
+                </div>
+                
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="video-play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center">Welcome video: Introduction to YoloTech</p>
+                
+                <a href="#" class="btn" onclick="showSection('getting-started')">Let's Get Started →</a>
+            </div>
+        </div>
+        
+        <!-- Getting Started Section -->
+        <div class="section" id="getting-started">
+            <div class="card">
+                <h2>Getting Started at YoloTech</h2>
+                
+                <h3>Your First Day Essentials</h3>
+                <p>Welcome to your first day! Here's a quick overview of what you should have received:</p>
+                
+                <ul class="checklist">
+                    <li class="checked">Company laptop and charger</li>
+                    <li class="checked">Company ID badge</li>
+                    <li class="checked">Email credentials</li>
+                    <li class="checked">VPN access information</li>
+                    <li>Access to company systems (setup instructions in this guide)</li>
+                </ul>
+                
+                <h3>Your Digital Workspace</h3>
+                <p>At YoloTech, we primarily use the following systems which you'll learn about in this guide:</p>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">1</span> Inside Yolo</div>
+                    <div class="step-content">Our company intranet where you can find company policies, announcements, and resources.</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">2</span> Team Dynamics</div>
+                    <div class="step-content">Our ticket management system for IT support, facility requests, and other internal services.</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">3</span> OneDrive</div>
+                    <div class="step-content">Cloud storage for your files, enabling easy access and collaboration.</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">4</span> Outlook</div>
+                    <div class="step-content">Email and calendar application for communication and scheduling.</div>
+                </div>
+                
+                <div class="progress-container">
+                    <p>Your onboarding progress:</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 10%;"></div>
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    <strong>Tip:</strong> Take your time going through each section of this guide. It's designed to be self-paced, and you can always come back to it later.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Inside Yolo Section -->
+        <div class="section" id="inside-yolo">
+            <div class="card">
+                <h2>Inside Yolo - Company Intranet</h2>
+                
+                <p>Inside Yolo is our company intranet where you can find important information, resources, and stay up-to-date with company news.</p>
+                
+                <h3>How to Access Inside Yolo</h3>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">1</span> Open Your Web Browser</div>
+                    <div class="step-content">
+                        <p>Launch your preferred web browser (Chrome recommended).</p>
+                        <img src="/api/placeholder/800/450" alt="Browser screenshot" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">2</span> Navigate to the Inside Yolo URL</div>
+                    <div class="step-content">
+                        <p>Enter <strong>https://inside.yolotech.com</strong> in your browser's address bar.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">3</span> Login with Your Credentials</div>
+                    <div class="step-content">
+                        <p>Use your company email address and the password provided by IT.</p>
+                        <img src="/api/placeholder/800/450" alt="Login page screenshot" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="note">
+                    <strong>Note:</strong> If this is your first time logging in, you may be prompted to change your password and set up multi-factor authentication.
+                </div>
+                
+                <h3>Key Features of Inside Yolo</h3>
+                
+                <div class="step">
+                    <div class="step-title"><i class="fas fa-newspaper"></i> Company News</div>
+                    <div class="step-content">
+                        <p>Stay updated with company announcements, events, and news.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><i class="fas fa-book"></i> Document Library</div>
+                    <div class="step-content">
+                        <p>Access company policies, procedures, and guidelines.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><i class="fas fa-users"></i> Employee Directory</div>
+                    <div class="step-content">
+                        <p>Find contact information for your colleagues across the organization.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><i class="fas fa-calendar-alt"></i> Company Calendar</div>
+                    <div class="step-content">
+                        <p>View upcoming company events, holidays, and important dates.</p>
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    <strong>Tip:</strong> Bookmark Inside Yolo in your browser for quick access.
+                </div>
+                
+                <div class="progress-container">
+                    <p>Your onboarding progress:</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Team Dynamics Section -->
+        <div class="section" id="team-dynamics">
+            <div class="card">
+                <h2>Team Dynamics - Ticket Management System</h2>
+                
+                <p>Team Dynamics is our ticket management system for requesting IT support, facility services, and other internal services.</p>
+                
+                <h3>How to Access Team Dynamics</h3>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">1</span> Access via Inside Yolo</div>
+                    <div class="step-content">
+                        <p>Log in to Inside Yolo and click on the "Team Dynamics" link in the top navigation bar.</p>
+                        <img src="/api/placeholder/800/450" alt="Inside Yolo navigation" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">2</span> Direct Access</div>
+                    <div class="step-content">
+                        <p>Alternatively, you can access it directly at <strong>https://teamdynamics.yolotech.com</strong></p>
+                        <p>Use your company email and password to log in.</p>
+                    </div>
+                </div>
+                
+                <h3>How to Submit a Ticket</h3>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">1</span> Click "Create New Ticket"</div>
+                    <div class="step-content">
+                        <p>Once logged in, click the "Create New Ticket" button in the top right corner.</p>
+                        <img src="/api/placeholder/800/450" alt="Create ticket button" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">2</span> Select Ticket Type</div>
+                    <div class="step-content">
+                        <p>Choose the appropriate category for your request:</p>
+                        <ul>
+                            <li>IT Support</li>
+                            <li>Facilities</li>
+                            <li>Human Resources</li>
+                            <li>Finance</li>
+                            <li>Other Departments</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">3</span> Fill Out the Form</div>
+                    <div class="step-content">
+                        <p>Complete the required fields:</p>
+                        <ul>
+                            <li>Subject: Brief description of your issue</li>
+                            <li>Description: Detailed explanation of your request</li>
+                            <li>Priority: Select based on urgency (Low, Medium, High)</li>
+                            <li>Attachments: Add screenshots or other relevant files if needed</li>
+                        </ul>
+                        <img src="/api/placeholder/800/450" alt="Ticket form" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">4</span> Submit Your Ticket</div>
+                    <div class="step-content">
+                        <p>Click the "Submit" button to create your ticket.</p>
+                        <p>You'll receive a confirmation email with your ticket number.</p>
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    <strong>Tip:</strong> For urgent IT issues, you can also call the IT Help Desk at <strong>ext. 1234</strong>.
+                </div>
+                
+                <h3>Tracking Your Tickets</h3>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">1</span> View "My Tickets"</div>
+                    <div class="step-content">
+                        <p>Click on "My Tickets" in the left navigation panel to see all your active and resolved tickets.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">2</span> Ticket Updates</div>
+                    <div class="step-content">
+                        <p>You'll receive email notifications when there are updates to your tickets.</p>
+                        <p>You can also add comments to your tickets if you need to provide additional information.</p>
+                    </div>
+                </div>
+                
+                <div class="warning">
+                    <strong>Important:</strong> Never share your login credentials with others. Each employee should submit their own tickets.
+                </div>
+                
+                <div class="progress-container">
+                    <p>Your onboarding progress:</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 50%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- OneDrive Section -->
+        <div class="section" id="onedrive">
+            <div class="card">
+                <h2>OneDrive - Cloud Storage</h2>
+                
+                <p>OneDrive is our cloud storage solution that allows you to store, access, and share your files securely from any device.</p>
+                
+                <h3>Setting Up OneDrive on Your Computer</h3>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">1</span> OneDrive Should Be Pre-installed</div>
+                    <div class="step-content">
+                        <p>OneDrive comes pre-installed on your company laptop.</p>
+                        <p>Look for the OneDrive cloud icon in your system tray (bottom right of your screen).</p>
+                        <img src="/api/placeholder/800/450" alt="OneDrive icon in system tray" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">2</span> Sign in to OneDrive</div>
+                    <div class="step-content">
+                        <p>If not already signed in:</p>
+                        <ol>
+                            <li>Click on the OneDrive icon in the system tray</li>
+                            <li>Select "Sign in"</li>
+                            <li>Enter your company email address</li>
+                            <li>Enter your password when prompted</li>
+                            <li>Follow the setup wizard to complete the process</li>
+                        </ol>
+                        <img src="/api/placeholder/800/450" alt="OneDrive sign-in" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">3</span> Choose Folders to Sync</div>
+                    <div class="step-content">
+                        <p>During setup, you can select which folders to sync to your computer.</p>
+                        <p>By default, all folders will be set to sync. You can change this by:</p>
+                        <ol>
+                            <li>Right-clicking the OneDrive icon in the system tray</li>
+                            <li>Selecting "Settings"</li>
+                            <li>Going to the "Account" tab</li>
+                            <li>Clicking "Choose folders"</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h3>Accessing OneDrive Online</h3>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">1</span> Via Web Browser</div>
+                    <div class="step-content">
+                        <p>You can access OneDrive through any web browser:</p>
+                        <ol>
+                            <li>Go to <strong>https://office.com</strong></li>
+                            <li>Sign in with your company email and password</li>
+                            <li>Click on the OneDrive icon in the app launcher</li>
+                        </ol>
+                        <img src="/api/placeholder/800/450" alt="OneDrive web access" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">2</span> Mobile App</div>
+                    <div class="step-content">
+                        <p>You can also access your files on mobile devices:</p>
+                        <ol>
+                            <li>Download the OneDrive app from the App Store (iOS) or Google Play Store (Android)</li>
+                            <li>Sign in with your company email and password</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h3>Sharing Files and Folders</h3>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">1</span> Select the File/Folder</div>
+                    <div class="step-content">
+                        <p>Right-click on the file or folder you want to share.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">2</span> Choose Sharing Options</div>
+                    <div class="step-content">
+                        <p>Select "Share" from the context menu.</p>
+                        <p>Enter the email addresses of the people you want to share with.</p>
+                        <p>Set permissions (View or Edit).</p>
+                        <p>Add a message if needed.</p>
+                        <p>Click "Send" to share.</p>
+                        <img src="/api/placeholder/800/450" alt="OneDrive sharing options" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="warning">
+                    <strong>Important:</strong> Be careful when sharing sensitive company information. Only share with those who need access.
+                </div>
+                
+                <div class="progress-container">
+                    <p>Your onboarding progress:</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Outlook Section -->
+        <div class="section" id="outlook">
+            <div class="card">
+                <h2>Outlook - Email and Calendar</h2>
+                
+                <p>Microsoft Outlook is our email and calendar application for professional communication and scheduling.</p>
+                
+                <h3>Setting Up Outlook</h3>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">1</span> Launch Outlook</div>
+                    <div class="step-content">
+                        <p>Outlook should be pre-installed on your company laptop.</p>
+                        <p>Click on the Outlook icon in your taskbar or Start menu.</p>
+                        <img src="/api/placeholder/800/450" alt="Outlook icon" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">2</span> Initial Setup</div>
+                    <div class="step-content">
+                        <p>If this is your first time launching Outlook:</p>
+                        <ol>
+                            <li>A setup wizard will appear</li>
+                            <li>Enter your company email address</li>
+                            <li>Enter your password when prompted</li>
+                            <li>Outlook will automatically configure your account settings</li>
+                        </ol>
+                        <img src="/api/placeholder/800/450" alt="Outlook setup wizard" class="screenshot">
+                    </div>
+                </div>
+                
+                <h3>Key Outlook Features</h3>
+                
+                <div class="step">
+                    <div class="step-title"><i class="fas fa-envelope"></i> Email</div>
+                    <div class="step-content">
+                        <p>Send, receive, and manage your emails:</p>
+                        <ul>
+                            <li><strong>Compose:</strong> Click "New Email" to create a new message</li>
+                            <li><strong>Reply/Forward:</strong> Use the Reply, Reply All, or Forward buttons</li>
+                            <li><strong>Organize:</strong> Create folders to organize your emails</li>
+                            <li><strong>Search:</strong> Use the search bar to find specific emails</li>
+                        </ul>
+                        <img src="/api/placeholder/800/450" alt="Outlook email interface" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><i class="fas fa-calendar-alt"></i> Calendar</div>
+                    <div class="step-content">
+                        <p>Schedule and manage your appointments:</p>
+                        <ul>
+                            <li><strong>View:</strong> Click the Calendar icon to switch to calendar view</li>
+                            <li><strong>New Event:</strong> Double-click on a time slot or click "New Appointment"</li>
+                            <li><strong>Meeting:</strong> Click "New Meeting" to invite others</li>
+                            <li><strong>Sharing:</strong> Share your calendar with colleagues for better coordination</li>
+                        </ul>
+                        <img src="/api/placeholder/800/450" alt="Outlook calendar interface" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><i class="fas fa-address-book"></i> Contacts</div>
+                    <div class="step-content">
+                        <p>Manage your professional contacts:</p>
+                        <ul>
+                            <li><strong>Add:</strong> Click "New Contact" to add someone to your address book</li>
+                            <li><strong>Groups:</strong> Create contact groups for easy emailing to teams</li>
+                            <li><strong>Company Directory:</strong> Access the company-wide address list</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Accessing Outlook Web App</h3>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">1</span> Via Web Browser</div>
+                    <div class="step-content">
+                        <p>You can access your email from any web browser:</p>
+                        <ol>
+                            <li>Go to <strong>https://outlook.office.com</strong></li>
+                            <li>Sign in with your company email and password</li>
+                        </ol>
+                        <img src="/api/placeholder/800/450" alt="Outlook Web App" class="screenshot">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title"><span class="step-number">2</span> Mobile App</div>
+                    <div class="step-content">
+                        <p>Download the Outlook mobile app for access on the go:</p>
+                        <ol>
+                            <li>Download the Outlook app from the App Store (iOS) or Google Play Store (Android)</li>
+                            <li>Sign in with your company email and password</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="tip">
+                    <strong>Tip:</strong> Set up your email signature in Outlook by going to File > Options > Mail > Signatures.
+                </div>
+                
+                <div class="progress-container">
+                    <p>Your onboarding progress:</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="section" id="faq">
+            <div class="card">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="accordion">
+                    <div class="accordion-header">
+                        How do I reset my password?
+                        <div class="accordion-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>To reset your password:</p>
+                        <ol>
+                            <li>Go to <strong>https://portal.yolotech.com/password</strong></li>
+                            <li>Click on "Forgot Password"</li>
+                            <li>Enter your company email address</li>
+                            <li>Follow the instructions sent to your email</li>
+                        </ol>
+                        <p>Alternatively, you can submit a ticket through Team Dynamics for password reset assistance.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion">
+                    <div class="accordion-header">
+                        How do I connect to the company VPN?
+                        <div class="accordion-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>To connect to the company VPN:</p>
+                        <ol>
+                            <li>Locate the VPN client icon in your system tray</li>
+                            <li>Right-click and select "Connect"</li>
+                            <li>Enter your company email and password</li>
+                            <li>If prompted, complete the multi-factor authentication</li>
+                        </ol>
+                        <p>For detailed instructions, check the "VPN Setup Guide" in the Document Library on Inside Yolo.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion">
+                    <div class="accordion-header">
+                        How do I request time off?
+                        <div class="accordion-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>To request time off:</p>
+                        <ol>
+                            <li>Log in to Inside Yolo</li>
+                            <li>Go to "HR Portal" in the top navigation</li>
+                            <li>Click on "Time Off Requests"</li>
+                            <li>Click "New Request"</li>
+                            <li>Fill out the form with your requested dates and reason</li>
+                            <li>Submit for approval</li>
+                        </ol>
+                        <p>Your manager will receive a notification and will approve or deny your request.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion">
+                    <div class="accordion-header">
+                        How do I order office supplies?
+                        <div class="accordion-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>To order office supplies:</p>
+                        <ol>
+                            <li>Log in to Team Dynamics</li>
+                            <li>Create a new ticket</li>
+                            <li>Select "Facilities" as the category</li>
+                            <li>Select "Supply Request" as the subcategory</li>
+                            <li>List the items you need in the description</li>
+                            <li>Submit the ticket</li>
+                        </ol>
+                        <p>The Facilities team will process your request and notify you when your supplies are available for pickup.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion">
+                    <div class="accordion-header">
+                        How do I book a meeting room?
+                        <div class="accordion-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>To book a meeting room:</p>
+                        <ol>
+                            <li>Open Outlook Calendar</li>
+                            <li>Create a new meeting</li>
+                            <li>Click "Rooms" to see available meeting rooms</li>
+                            <li>Select your preferred room</li>
+                            <li>Add attendees and other meeting details</li>
+                            <li>Send the invitation</li>
+                        </ol>
+                        <p>You can also view room availability in the "Room Finder" feature in Outlook.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Key Contacts Section -->
+        <div class="section" id="contacts">
+            <div class="card">
+                <h2>Key Contacts</h2>
+                
+                <p>Here are important contacts to know during your onboarding and beyond:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Department</th>
+                            <th>Contact</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>IT Help Desk</td>
+                            <td>IT Support Team</td>
+                            <td>helpdesk@yolotech.com</td>
+                            <td>Ext. 1234</td>
+                        </tr>
+                        <tr>
+                            <td>Human Resources</td>
+                            <td>HR Team</td>
+                            <td>hr@yolotech.com</td>
+                            <td>Ext. 2345</td>
+                        </tr>
+                        <tr>
+                            <td>Facilities</td>
+                            <td>Facilities Team</td>
+                            <td>facilities@yolotech.com</td>
+                            <td>Ext. 3456</td>
+                        </tr>
+                        <tr>
+                            <td>Security</td>
+                            <td>Security Team</td>
+                            <td>security@yolotech.com</td>
+                            <td>Ext. 4567</td>
+                        </tr>
+                        <tr>
+                            <td>Payroll</td>
+                            <td>Finance Team</td>
+                            <td>payroll@yolotech.com</td>
+                            <td>Ext. 5678</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Your Department Contacts</h3>
+                
+                <p>Connect with your immediate team members:</p>
+                
+                <ul>
+                    <li><strong>Your Manager:</strong> [Manager Name and Contact Information]</li>
+                    <li><strong>Your Team Lead:</strong> [Team Lead Name and Contact Information]</li>
+                    <li><strong>Department Admin:</strong> [Admin Name and Contact Information]</li>
+                </ul>
+                
+                <div class="note">
+                    <strong>Note:</strong> Your manager will provide you with a complete list of your team members during your onboarding.
+                </div>
+                
+                <h3>Your Buddy</h3>
+                
+                <p>You've been assigned a buddy to help you navigate your first few weeks at YoloTech:</p>
+                
+                <ul>
+                    <li><strong>Name:</strong> [Buddy Name]</li>
+                    <li><strong>Position:</strong> [Buddy Position]</li>
+                    <li><strong>Email:</strong> [Buddy Email]</li>
+                    <li><strong>Phone:</strong> [Buddy Phone]</li>
+                </ul>
+                
+                <p>Don't hesitate to reach out to your buddy with any questions about company culture, processes, or other aspects of working at YoloTech.</p>
+            </div>
+        </div>
+        
+        <!-- Onboarding Checklist Section -->
+        <div class="section" id="checklist">
+            <div class="card">
+                <h2>Onboarding Checklist</h2>
+                
+                <p>Use this checklist to track your progress through the onboarding process:</p>
+                
+                <h3>Week 1</h3>
+                
+                <ul class="checklist">
+                    <li class="checked">Receive company laptop and equipment</li>
+                    <li class="checked">Get company ID badge</li>
+                    <li class="checked">Complete new hire paperwork</li>
+                    <li>Set up workstation</li>
+                    <li>Log in to company email</li>
+                    <li>Connect to company VPN</li>
+                    <li>Access Inside Yolo</li>
+                    <li>Create a Team Dynamics account</li>
+                    <li>Set up OneDrive</li>
+                    <li>Configure Outlook email signature</li>
+                    <li>Attend company orientation</li>
+                    <li>Meet with your manager</li>
+                    <li>Connect with your buddy</li>
+                </ul>
+                
+                <h3>Week 2</h3>
+                
+                <ul class="checklist">
+                    <li>Complete required training modules</li>
+                    <li>Review department documentation</li>
+                    <li>Set up recurring 1:1 meetings with your manager</li>
+                    <li>Join team meetings</li>
+                    <li>Meet key stakeholders</li>
+                    <li>Review your 30-60-90 day plan</li>
+                </ul>
+                
+                <h3>First 30 Days</h3>
+                
+                <ul class="checklist">
+                    <li>Complete all mandatory training</li>
+                    <li>Participate in department meetings</li>
+                    <li>Begin work on initial projects</li>
+                    <li>Schedule check-in with your manager</li>
+                    <li>Provide feedback on your onboarding experience</li>
+                </ul>
+                
+                <div class="tip">
+                    <strong>Tip:</strong> Click on each item to mark it as completed. Your progress will be saved locally on your browser.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 YoloTech, Inc. All rights reserved.</p>
+            <p>Last updated: April 24, 2025</p>
+        </div>
+    </div>
+    
+    <script>
+        // Show selected section
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update active nav item
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.section === sectionId) {
+                    item.classList.add('active');
+                }
+            });
+            
+            // Update progress bar
+            updateProgressBar(sectionId);
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Initialize navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                showSection(item.dataset.section);
+            });
+        });
+        
+        // Initialize accordions
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const accordion = header.parentElement;
+                accordion.classList.toggle('active');
+            });
+        });
+        
+        // Initialize checklist
+        document.querySelectorAll('.checklist li').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('checked');
+                saveChecklistState();
+            });
+        });
+        
+        // Save checklist state to localStorage
+        function saveChecklistState() {
+            const checkedItems = [];
+            document.querySelectorAll('.checklist li.checked').forEach(item => {
+                checkedItems.push(item.textContent);
+            });
+            localStorage.setItem('yolotech-checklist', JSON.stringify(checkedItems));
+        }
+        
+        // Load checklist state from localStorage
+        function loadChecklistState() {
+            const checkedItems = JSON.parse(localStorage.getItem('yolotech-checklist')) || [];
+            document.querySelectorAll('.checklist li').forEach(item => {
+                if (checkedItems.includes(item.textContent)) {
+                    item.classList.add('checked');
+                }
+            });
+        }
+        
+        // Update progress bar based on section
+        function updateProgressBar(sectionId) {
+            const progressMap = {
+                'welcome': '0%',
+                'getting-started': '10%',
+                'inside-yolo': '25%',
+                'team-dynamics': '50%',
+                'onedrive': '75%',
+                'outlook': '100%',
+                'faq': '100%',
+                'contacts': '100%',
+                'checklist': '100%'
+            };
+            
+            const sections = ['inside-yolo', 'team-dynamics', 'onedrive', 'outlook'];
+            if (sections.includes(sectionId)) {
+                document.querySelectorAll('.progress-fill').forEach(fill => {
+                    fill.style.width = progressMap[sectionId];
+                });
+            }
+        }
+        
+        // Simple search functionality
+        document.getElementById('guideSearch').addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.toLowerCase();
+                let found = false;
+                
+                document.querySelectorAll('.section').forEach(section => {
+                    const content = section.textContent.toLowerCase();
+                    if (content.includes(searchTerm)) {
+                        showSection(section.id);
+                        found = true;
+                        return;
+                    }
+                });
+                
+                if (!found) {
+                    alert('No results found for: ' + searchTerm);
+                }
+            }
+        });
+        
+        // Load checklist state on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadChecklistState();
+        });
+    </script>
+</body>
+</html>
+                
