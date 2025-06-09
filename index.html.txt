@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoloTech New Hire Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fa-rocket"></i></div>
+                <span>YoloTech</span>
+            </div>
+        </div>
+        
+        <div class="search-box">
+            <input type="text" placeholder="Search..." id="guideSearch">
+        </div>
+        
+        <div class="nav-menu">
+            <div class="nav-heading">Get Started</div>
+            <div class="nav-item active" data-section="welcome">
+                <i class="fa-home"></i>
+                <span>Welcome</span>
+            </div>
+            <div class="nav-item" data-section="getting-started">
+                <i class="fa-play-circle"></i>
+                <span>Getting Started</span>
+            </div>
+            
+            <div class="nav-heading">Essential Systems</div>
+            <div class="nav-item" data-section="inside-yolo">
+                <i class="fa-building"></i>
+                <span>Inside Yolo</span>
+            </div>
+            <div class="nav-item" data-section="team-dynamics">
+                <i class="fa-ticket-alt"></i>
+                <span>Team Dynamics</span>
+            </div>
+            <div class="nav-item" data-section="onedrive">
+                <i class="fa-cloud"></i>
+                <span>OneDrive</span>
+            </div>
+            <div class="nav-item" data-section="outlook">
+                <i class="fa-envelope"></i>
+                <span>Outlook</span>
+            </div>
+            
+            <div class="nav-heading">Resources</div>
+            <div class="nav-item" data-section="faq">
+                <i class="fa-question-circle"></i>
+                <span>FAQ</span>
+            </div>
+            <div class="nav-item" data-section="contacts">
+                <i class="fa-address-book"></i>
+                <span>Key Contacts</span>
+            </div>
+            <div class="nav-item" data-section="checklist">
+                <i class="fa-tasks"></i>
+                <span>Onboarding Checklist</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <!-- Copy all your section content here -->
+        <!-- Everything between <div class="main-content"> and </div> from your original file -->
+        
+        <!-- Welcome Section -->
+        <div class="section active" id="welcome">
+            <!-- ... all your welcome content ... -->
+        </div>
+        
+        <!-- Getting Started Section -->
+        <div class="section" id="getting-started">
+            <!-- ... all your getting started content ... -->
+        </div>
+        
+        <!-- Continue with all other sections... -->
+        
+        <div class="footer">
+            <p>&copy; 2025 YoloTech, Inc. All rights reserved.</p>
+            <p>Last updated: April 24, 2025</p>
+        </div>
+    </div>
+    
+    <!-- Add export button for Electron app -->
+    <button class="export-btn" onclick="exportProgress()" title="Export Progress">
+        📥 Export Progress
+    </button>
+    
+    <script src="script.js"></script>
+</body>
+</html>
